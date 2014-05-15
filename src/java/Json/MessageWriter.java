@@ -7,6 +7,7 @@
 package Json;
 
 import Domein.Message;
+import Domein.User;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.lang.annotation.Annotation;
@@ -46,14 +47,13 @@ public class MessageWriter implements MessageBodyWriter<Message>
     public void writeTo(Message message, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException, WebApplicationException
     {
         JsonObjectBuilder jsonMessage = Json.createObjectBuilder();
-
-        jsonMessage.add("username", message.getUsername());
-        
-        if (message.getFullName() != null) {
-            jsonMessage.add("fullName", message.getFullName());
-        }
-        
-        
+        User user = new User();
+        user = message.getFromUser();
+        jsonMessage.add("fromUser", user.getEmail());
+        user = message.getToUser();
+        jsonMessage.add("toUser", user.getEmail());
+        jsonMessage.add("message", user.getEmail());
+            
         
         
         try (JsonWriter out = Json.createWriter(entityStream)) {
