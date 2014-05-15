@@ -61,11 +61,12 @@ public class MessageListWriter implements MessageBodyWriter<List<Message>>{
         for (Message message : messages) {
             JsonObjectBuilder jsonMessage = Json.createObjectBuilder();
             User user = new User();
+            jsonMessage.add("messageId", message.getMessageId());
             user = message.getFromUser();
             jsonMessage.add("fromUser", user.getEmail());
             user = message.getToUser();
             jsonMessage.add("toUser", user.getEmail());
-            jsonMessage.add("message", user.getEmail());
+            jsonMessage.add("message", message.getMessage());
             
             jsonMessages.add(jsonMessage);
         }

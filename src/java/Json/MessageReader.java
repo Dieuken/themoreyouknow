@@ -48,7 +48,7 @@ public class MessageReader implements MessageBodyReader<Message>
             Message message = new Message();
             User user = new User();
             
-            message.setMessageId(jsonMessage.getInt("messageId", 0));
+            
             user.setEmail(jsonMessage.getString("fromUser", null));
             message.setFromUser(user);
             user.setEmail(jsonMessage.getString("toUser", null));

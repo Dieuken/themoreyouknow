@@ -52,7 +52,7 @@ public class MessageWriter implements MessageBodyWriter<Message>
         jsonMessage.add("fromUser", user.getEmail());
         user = message.getToUser();
         jsonMessage.add("toUser", user.getEmail());
-        jsonMessage.add("message", user.getEmail());
+        jsonMessage.add("message", message.getMessage());
             
         
         
