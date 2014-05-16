@@ -25,13 +25,13 @@ public class User
 {
     @Id
     private String email;
-    private int lat;
-    private int lng;
+    private String lat;
+    private String lng;
 
     public User() {
     }
 
-    public User(String email, int lat, int lng) {
+    public User(String email, String lat, String lng) {
         this.email = email;
         this.lat = lat;
         this.lng = lng;
@@ -41,11 +41,11 @@ public class User
         return email;
     }
 
-    public int getLat() {
+    public String getLat() {
         return lat;
     }
 
-    public int getLng() {
+    public String getLng() {
         return lng;
     }
 
@@ -53,11 +53,11 @@ public class User
         this.email = email;
     }
 
-    public void setLat(int lat) {
+    public void setLat(String lat) {
         this.lat = lat;
     }
 
-    public void setLng(int lng) {
+    public void setLng(String lng) {
         this.lng = lng;
     }
     

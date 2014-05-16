@@ -43,8 +43,8 @@ public class UserReader implements MessageBodyReader<User>
             User user = new User();
             
             user.setEmail(jsonUser.getString("email", null));
-            user.setLat(jsonUser.getInt("lat", 0));
-            user.setLng(jsonUser.getInt("lng", 0));
+            user.setLat(jsonUser.getString("lat", null));
+            user.setLng(jsonUser.getString("lng", null));
             
             
             

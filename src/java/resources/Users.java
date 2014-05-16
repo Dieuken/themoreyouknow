@@ -96,15 +96,15 @@ public class Users
             // fullName. Hoe je een volledige update kan ondersteunen, is te vinden in het grote
             // voorbeeld 'Reminders'.
             
-            int lat = jsonUser.getInt("lat", 0);
-            if (lat != 0) {
+            String lat = jsonUser.getString("lat", null);
+            if (lat != null) {
                 
                     user.setLat(lat);
      
             }
 
-            int lng = jsonUser.getInt("lng", 0);
-            if (lng != 0) {
+            String lng = jsonUser.getString("lng", null);
+            if (lng != null) {
                 
                     user.setLng(lng);
      

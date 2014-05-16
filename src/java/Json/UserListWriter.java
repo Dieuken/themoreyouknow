@@ -61,11 +61,11 @@ public class UserListWriter implements MessageBodyWriter<List<User>> {
             JsonObjectBuilder jsonUser = Json.createObjectBuilder();
             
             jsonUser.add("email", user.getEmail());
-            if (user.getLat() != 0) {
+            if (user.getLat() != null) {
                 jsonUser.add("lat", user.getLat());
             }
             
-            if (user.getLng() != 0) {
+            if (user.getLng() != null) {
                 jsonUser.add("lng", user.getLng());
             }
             jsonUsers.add(jsonUser);

@@ -44,11 +44,11 @@ public class UserWriter implements MessageBodyWriter<User>
 
         jsonUser.add("email", user.getEmail());
         
-        if (user.getLat() != 0) {
+        if (user.getLat() != null) {
             jsonUser.add("lat", user.getLat());
         }
         
-        if (user.getLng() != 0) {
+        if (user.getLng() != null) {
             jsonUser.add("lng", user.getLng());
         }
         
